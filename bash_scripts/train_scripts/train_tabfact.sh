@@ -1,0 +1,23 @@
+exp_name = xxx
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7; python -m torch.distributed.launch --nproc_per_node 8 run_tabfact.py \
+  --do_train \
+  --do_eval \
+  --model_name_or_path Yale-LILY/reastap-large \
+  --overwrite_output_dir \
+  --output_dir checkpoints/tabfact/${exp_name} \
+  --per_device_train_batch_size 4 \
+  --gradient_accumulation_steps 8 \
+  --per_device_eval_batch_size 8 \
+  --report_to wandb \
+  --num_train_epochs 10.0 \
+  --warmup_ratio 0.1 \
+  --learning_rate 2e-5 \
+  --fp16 \
+  --logging_steps 10 \
+  --eval_steps 100 \
+  --save_steps 200 \
+  --evaluation_strategy steps \
+  --weight_decay 1e-2 \
+  --label_smoothing_factor 0.1 \
+  --save_total_limit 10 \
+  --run_name ${exp_name}

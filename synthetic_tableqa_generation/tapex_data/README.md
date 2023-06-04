@@ -1,0 +1,1 @@
+Download the tapex training data (`sql_executor.src` and `sql_executor.tgt`) from [Google Drive](https://drive.google.com/drive/folders/15NdyMQnoM7edpVwOhHzMqs4Mgk3MWdfN?usp=share_link) and put them in this folder.

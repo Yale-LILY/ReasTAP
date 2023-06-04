@@ -1,0 +1,91 @@
+[  
+  {
+    "reasoning_type": "conjunction",
+    "sample_examples_per_table" : 2,
+    "enable": true,
+    "templates": [
+      {
+        "template_str": "What was the [target_col] when the [source_col_1] [cond_1] and the [source_col_2] [cond_2]?",
+        "type": "conjunction"
+      }
+    ]
+  },
+  {
+    "reasoning_type": "quantifiers",
+    "sample_examples_per_table" : 2,
+    "enable": true,
+    "templates": [
+      {
+        "template_str": "Does [operator] [target_col], with [source_col_1] [cond_1], have [source_col_2] [cond_2]?",
+        "type": "only"
+      },
+      {
+        "template_str": "Does [operator] [target_col], with [source_col_1] [cond_1], have [source_col_2] [cond_2]?",
+        "type": "every"
+      }
+    ]
+  },
+  {
+    "reasoning_type": "temporal_comparison",
+    "sample_examples_per_table" : 3,
+    "enable": true,
+    "templates": [
+      {
+        "template_str": "Which [target_col], with [source_col_1] [cond_1], happened the [ordinal] according to [source_col_2]?",
+        "type": "temporal_ordinal"
+      }
+    ]
+  },
+  {
+    "reasoning_type": "numerical_comparison",
+    "sample_examples_per_table" : 3,
+    "enable": true,
+    "templates": [
+      {
+        "template_str": "Which [target_col], with [source_col_1] [cond_1], has the [ordinal] largest [source_col_2]?",
+        "type": "numerical_ordinal"
+      }
+    ]
+  },
+  {
+    "reasoning_type": "date_difference",
+    "sample_examples_per_table" : 2,
+    "enable": true,
+    "templates": [
+      {
+        "template_str": "How many [date] had passed between when the [source_col_1] was [val_1] and when the [source_col_1] was [val_2]?",
+        "type": "date_difference"
+      }
+    ]
+  },
+  {
+    "reasoning_type": "counting",
+    "sample_examples_per_table" : 3,
+    "enable": true,
+    "templates": [
+      {
+        "template_str": "How many [target_col] had [source_col_1] [cond_1]?",
+        "type": "counting_1"
+      },
+      {
+        "template_str": "How many [target_col] had [source_col_1] [cond_1] and [source_col_2] [cond_2]?",
+        "type": "counting_2"
+      }
+    ]
+  },
+  {
+    "reasoning_type": "numerical_operation",
+    "sample_examples_per_table" : 3,
+    "enable": true,
+    "templates": [
+      {
+        "template_str": "What was the [operator] of [source_col_1] when the [source_col_2] [cond_2]?",
+        "type": "sum"
+      },
+      {
+        "template_str": "What was the [operator] of [source_col_1] when the [source_col_2] [cond_2]?",
+        "type": "average"
+      }
+    ]
+  }
+]

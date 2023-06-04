@@ -1,0 +1,32 @@
+exp_name = xxx
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7; python -m torch.distributed.launch --nproc_per_node 8 run_pretrain.py \
+  --do_train \
+  --do_eval \
+  --train_file pretrain_data/train.jsonl \
+  --validation_file pretrain_data/dev.jsonl \
+  --model_name_or_path facebook/bart-large \
+  --overwrite_output_dir \
+  --output_dir checkpoints/pretrain/${exp_name} \
+  --max_source_length 1024 \
+  --max_target_length 128 \
+  --val_max_target_length 128 \
+  --per_device_train_batch_size 16 \
+  --gradient_accumulation_steps 2 \
+  --per_device_eval_batch_size 16 \
+  --report_to wandb \
+  --num_train_epochs 5.0 \
+  --warmup_ratio 0.1 \
+  --learning_rate 3e-5 \
+  --fp16 \
+  --preprocessing_num_workers 8 \
+  --logging_steps 10 \
+  --eval_steps 2000 \
+  --save_steps 4000 \
+  --evaluation_strategy steps \
+  --predict_with_generate \
+  --num_beams 5 \
+  --weight_decay 1e-2 \
+  --label_smoothing_factor 0.1 \
+  --generation_max_length 128 \
+  --save_total_limit 5 \
+  --exp_name ${exp_name}

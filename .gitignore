@@ -1,0 +1,10 @@
+wandb
+__pycache__
+*.jsonl
+*.bin
+output_*.json
+*.src
+*.tgt
+upload_huggingface.py
+synthetic_qa_output.json
+tapex_pretrain_data.json

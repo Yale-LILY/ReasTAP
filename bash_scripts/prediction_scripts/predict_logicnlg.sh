@@ -1,0 +1,15 @@
+export CUDA_VISIBLE_DEVICES=0; python run_logicnlg.py \
+  --do_predict \
+  --dataset_name kasnerz/logicnlg \
+  --model_name_or_path Yale-LILY/reastap-large-finetuned-logicnlg \
+  --output_dir outputs/logicnlg_output/ \
+  --max_source_length 1024 \
+  --max_target_length 128 \
+  --val_max_target_length 128 \
+  --per_device_eval_batch_size 16 \
+  --predict_with_generate \
+  --num_beams 5 \
+  --generation_max_length 128 \
+  --save_total_limit 5 \
+  --eval_accumulation_steps 32 \
+  --inference_set test

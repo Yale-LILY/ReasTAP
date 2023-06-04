@@ -1,0 +1,12 @@
+export CUDA_VISIBLE_DEVICES=0; python run_wikisql.py \
+  --do_eval \
+  --model_name_or_path Yale-LILY/reastap-large-finetuned-wikisql \
+  --overwrite_output_dir \
+  --max_source_length 1024 \
+  --max_target_length 128 \
+  --output_dir outputs/wikisql_output \
+  --per_device_eval_batch_size 12 \
+  --predict_with_generate \
+  --generation_max_length 128 \
+  --num_beams 5 \
+  --inference_set validation
